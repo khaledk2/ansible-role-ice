@@ -1,6 +1,4 @@
 ---
-- import_tasks: pre_tasks.yml
-
 - import_tasks: redhat9.yml
   when: >-
     (ansible_os_family | lower == 'redhat') and
