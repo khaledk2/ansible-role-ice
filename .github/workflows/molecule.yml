@@ -30,9 +30,9 @@ jobs:
         scenario: ${{fromJson(needs.list-scenarios.outputs.matrix)}}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
-          python-version: '3.8'
+          python-version: '3.9'
       - name: Install Ansible & Molecule
         run: |
             pip install "ansible<8" "ansible-lint<6.13" flake8
@@ -49,7 +49,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: galaxy
-        uses: robertdebock/galaxy-action@1.2.1
+        uses: ansible-actions/ansible-galaxy-action@v1.2.0
         with:
           galaxy_api_key: ${{ secrets.GALAXY_API_KEY }}
-          git_branch: ${{  github.ref_name }}
+          galaxy_version: ${{  github.ref_name }}
