@@ -27,6 +27,7 @@
   when: >-
       (ansible_os_family | lower == 'debian') and
       (ansible_distribution_major_version == '22')
+      (ansible_facts.get('architecture') == 'x86_64')
 
 
 - name: zeroc ice | Include ome.deploy_archive redhat
@@ -58,11 +59,11 @@ download/{{ ice_zeroc_ice_rockylinux9_version }}/Ice-3.6.5-rhel9-x86_64.tar.gz"
     deploy_archive_symlink: /opt/ice
     deploy_archive_internal_root: >-
       ice-3.6.5
-  when: >-
-    (ansible_os_family | lower == 'redhat') and
-    (ansible_distribution_major_version == '9') and
+  when: >-    
     (ansible_facts.get('architecture') == 'aarch64')
 
+#(ansible_os_family | lower == 'redhat') and
+#    (ansible_distribution_major_version == '9') and
 #- name: zero ice | install bzip2
 #  become: true
 #  ansible.builtin.dnf:
