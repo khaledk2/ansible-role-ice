@@ -30,9 +30,11 @@
 
 - command: "ls -l /opt"
   register: dir_out
+  changed_when: false
 
 - debug: var={{item}}
   with_items: dir_out
+  changed_when: false
 
 - name: debug run command
   #command: "/opt/Ice-3.6.5/bin/icegridnode --version"
