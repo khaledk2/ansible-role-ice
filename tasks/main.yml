@@ -72,7 +72,7 @@
 #namei -l /usr/local/bin/command
 ##
 - name: Diagnose command execution  read link
-  ansible.builtin.shell: readlink -f /usr/local/bin/icegridnode --version
+  ansible.builtin.shell: readlink -f /usr/local/bin/icegridnode
   register: diagnostic
   changed_when: false
   failed_when: false
