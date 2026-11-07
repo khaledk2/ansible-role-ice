@@ -45,23 +45,39 @@
   register: sss
   changed_when: false
   ignore_errors: true
-
+  when: >-
+    (ansible_facts.get('architecture') == 'aarch64')
 
 - debug:
     msg: "2. command output is {{ sss }}"
   changed_when: false
-
+  when: >-
+    (ansible_facts.get('architecture') == 'aarch64')
 - name: Diagnose command execution
-  ansible.builtin.shell: |
-    echo "User: $(whoami)"
-    echo "PATH: $PATH"
+  ansible.builtin.shell: |  
     ls -l /usr/local/bin/icegridnode
-    /usr/local/bin/icegridnode --version
-    echo "Return code: $?"
   register: diagnostic
   changed_when: false
   failed_when: false
+  when: >-
+    (ansible_facts.get('architecture') == 'aarch64')
 
 - name: Display diagnostic information
   ansible.builtin.debug:
     var: diagnostic
+  when: >-
+    (ansible_facts.get('architecture') == 'aarch64')
+- name: Diagnose command execution
+  ansible.builtin.shell: |  
+    /usr/local/bin/icegridnode --version
+  register: diagnostic
+  changed_when: false
+  failed_when: false
+  when: >-
+    (ansible_facts.get('architecture') == 'aarch64')
+
+- name: Display diagnostic information
+  ansible.builtin.debug:
+    var: diagnostic
+  when: >-
+    (ansible_facts.get('architecture') == 'aarch64')
