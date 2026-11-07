@@ -68,8 +68,7 @@
   when: >-
     (ansible_facts.get('architecture') == 'aarch64')
 - name: Diagnose command execution
-  ansible.builtin.shell: |  
-    "/usr/local/bin/icegridnode --version"
+  ansible.builtin.shell: /usr/local/bin/icegridnode --version
   register: diagnostic
   changed_when: false
   failed_when: false
