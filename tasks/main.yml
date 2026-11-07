@@ -28,7 +28,7 @@
     - icegridnode
 
 
-- command: "ls -ld /opt/* "
+- command: "ls -ld /opt"
   register: dir_out
 
 - debug: var={{item}}
