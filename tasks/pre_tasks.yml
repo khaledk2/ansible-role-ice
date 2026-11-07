@@ -62,15 +62,6 @@ download/{{ ice_zeroc_ice_rockylinux9_version }}/Ice-3.6.5-rhel9-x86_64.tar.gz"
   when: >-    
     (ansible_facts.get('architecture') == 'aarch64')
 
-- command: "ls /opt/Ice-3.6.5/bin -l"
-  register: dir_out
-  when: >-
-    (ansible_facts.get('architecture') == 'aarch64')
-- debug: var={{item}}
-  with_items: dir_out.stdout_lines
-  when: >-
-    (ansible_facts.get('architecture') == 'aarch64')
-
 #(ansible_os_family | lower == 'redhat') and
 #    (ansible_distribution_major_version == '9') and
 #- name: zero ice | install bzip2
