@@ -31,8 +31,16 @@
   command: "{{ ice_binaries_symlink_dest }}/icegridnode --version"
   register: ss
   changed_when: false
-  ignore_errors: yes
 
 - debug:
-    msg: "command output is {{ ss }}"
+    msg: "1. command output is {{ ss }}"
+  changed_when: false
+
+- name: debug run command
+  command: "/opt/ice/bin/icegridnode --version"
+  register: sss
+  changed_when: false
+
+- debug:
+    msg: "2. command output is {{ sss }}"
   changed_when: false
