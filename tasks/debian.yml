@@ -14,3 +14,4 @@
       - libexpat1
       - libmcpp0
       - openssl
+      - wget
