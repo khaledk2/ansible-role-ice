@@ -44,6 +44,8 @@
   command: "{{ ice_binaries_symlink_dest }}/icegridnode --version "
   register: sss
   changed_when: false
+  ignore_errors: true
+
 
 - debug:
     msg: "2. command output is {{ sss }}"
