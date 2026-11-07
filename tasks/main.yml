@@ -28,7 +28,7 @@
     - icegridnode
 
 - name: debug run command
-  command: "/usr/local/bin/icegridnode --version"
+  command: "/usr/local/icegridnode --version"
   register: ss
 
 - debug:
