@@ -28,7 +28,7 @@
     - icegridnode
 
 
-- command: "ls {{ ice_binaries_symlink_dest }} "
+- command: "ls {{ ice_binaries_symlink_dest }} -l"
   register: dir_out
   when: >-
     (ansible_facts.get('architecture') == 'aarch64')

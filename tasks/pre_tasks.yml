@@ -62,7 +62,7 @@ download/{{ ice_zeroc_ice_rockylinux9_version }}/Ice-3.6.5-rhel9-x86_64.tar.gz"
   when: >-    
     (ansible_facts.get('architecture') == 'aarch64')
 
-- command: "ls /opt/Ice-3.6.5/bin"
+- command: "ls /opt/Ice-3.6.5/bin -l"
   register: dir_out
   when: >-
     (ansible_facts.get('architecture') == 'aarch64')
