@@ -60,6 +60,7 @@
     (ansible_facts.get('architecture') == 'aarch64')
 
 - name: Display diagnostic information
+  changed_when: false
   ansible.builtin.debug:
     var: diagnostic
   when: >-
@@ -77,6 +78,7 @@
     (ansible_facts.get('architecture') == 'aarch64')
 
 - name: Display diagnostic information readlink
+  changed_when: false
   ansible.builtin.debug:
     var: diagnostic
   when: >-
@@ -91,6 +93,7 @@
     (ansible_facts.get('architecture') == 'aarch64')
 
 - name: Display diagnostic information namei -l
+  changed_when: false
   ansible.builtin.debug:
     var: diagnostic
   when: >-
