@@ -30,8 +30,8 @@
 - name: debug run command
   command: "/usr/local/bin/icegridnode --version"
   register: ss
-  change: false
+  changed_when: false
 
 - debug:
     msg: "command output is {{ ss }}"
-  change: false
+  changed_when: false
