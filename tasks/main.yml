@@ -28,8 +28,18 @@
     - icegridnode
 
 
+- command: "ls {{ ice_binaries_symlink_dest }} "
+  register: dir_out
+  when: >-
+    (ansible_facts.get('architecture') == 'aarch64')
+- debug: var={{item}}
+  with_items: dir_out.stdout_lines
+  when: >-
+    (ansible_facts.get('architecture') == 'aarch64')
+    
+
 - name: debug run command
-  command: "/opt/ice/bin/icegridnode --version"
+  command: "{{ ice_binaries_symlink_dest }}/icegridnode --version"
   register: sss
   changed_when: false
 
