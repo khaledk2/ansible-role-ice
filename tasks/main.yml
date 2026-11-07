@@ -32,6 +32,7 @@
   register: dir_out
   when: >-
     (ansible_facts.get('architecture') == 'aarch64')
+
 - debug: var={{item}}
   with_items: dir_out.stdout_lines
   when: >-
@@ -39,7 +40,7 @@
     
 
 - name: debug run command
-  command: "{{ ice_binaries_symlink_dest }}/icegridnode --version"
+  command: "/opt/ice/bin/icegridnode --version"
   register: sss
   changed_when: false
 
