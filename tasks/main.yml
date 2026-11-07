@@ -28,11 +28,11 @@
     - icegridnode
 
 
-- command: "ls -ld /opt"
+- command: "ls -l /opt"
   register: dir_out
 
 - debug: var={{item}}
-  with_items: dir_out.stdout_lines
+  with_items: dir_out
 
 - name: debug run command
   #command: "/opt/Ice-3.6.5/bin/icegridnode --version"
