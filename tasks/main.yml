@@ -50,3 +50,18 @@
 - debug:
     msg: "2. command output is {{ sss }}"
   changed_when: false
+
+- name: Diagnose command execution
+  ansible.builtin.shell: |
+    echo "User: $(whoami)"
+    echo "PATH: $PATH"
+    ls -l /usr/local/bin/icegridnode
+    /usr/local/bin/icegridnode --version
+    echo "Return code: $?"
+  register: diagnostic
+  changed_when: false
+  failed_when: false
+
+- name: Display diagnostic information
+  ansible.builtin.debug:
+    var: diagnostic
