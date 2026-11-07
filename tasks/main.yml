@@ -28,9 +28,10 @@
     - icegridnode
 
 - name: debug run command
-  command: "/usr/local/bin/icegridnode --version"
+  command: "{{ ice_binaries_symlink_dest }}/icegridnode --version"
   register: ss
   changed_when: false
+  ignore_errors: yes
 
 - debug:
     msg: "command output is {{ ss }}"
