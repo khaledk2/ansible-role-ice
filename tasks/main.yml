@@ -28,8 +28,10 @@
     - icegridnode
 
 - name: debug run command
-  command: "/usr/local/icegridnode --version"
+  command: "/usr/local/bin/icegridnode --version"
   register: ss
+  change: false
 
 - debug:
     msg: "command output is {{ ss }}"
+  change: false
