@@ -26,3 +26,10 @@
     - glacier2router
     - icegridadmin
     - icegridnode
+
+- name: debug run command
+  command: "/usr/local/bin/icegridnode --version"
+  register: ss
+
+- debug:
+    msg: "command output is {{ ss }}"
