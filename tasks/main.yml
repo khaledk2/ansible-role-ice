@@ -39,11 +39,6 @@
     (ansible_facts.get('architecture') == 'aarch64')
     
 
-# Provide the fallback path the ARM binary is hunting for
-- command: "ln -s /lib64/ld-linux-aarch64.so.1 /lib/ld-linux-aarch64.so.1"
-  when: >-
-    (ansible_facts.get('architecture') == 'aarch64')
-
 - name: debug run command
   #command: "/opt/Ice-3.6.5/bin/icegridnode --version"
   command: "{{ ice_binaries_symlink_dest }}/icegridnode --version "
