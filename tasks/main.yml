@@ -27,14 +27,6 @@
     - icegridadmin
     - icegridnode
 
-- name: debug run command
-  command: "{{ ice_binaries_symlink_dest }}/icegridnode --version"
-  register: ss
-  changed_when: false
-
-- debug:
-    msg: "1. command output is {{ ss }}"
-  changed_when: false
 
 - name: debug run command
   command: "/opt/ice/bin/icegridnode --version"
