@@ -68,30 +68,32 @@
   when: >-
     (ansible_facts.get('architecture') == 'aarch64')
     
-
-- name: Diagnose command execution Ice-3.6.5
-  ansible.builtin.shell: /opt/Ice-3.6.5/bin/icegridnode --version
+####readlink -f /usr/local/bin/command
+#namei -l /usr/local/bin/command
+##
+- name: Diagnose command execution  read link
+  ansible.builtin.shell: readlink -f /usr/local/bin/icegridnode --version
   register: diagnostic
   changed_when: false
   failed_when: false
   when: >-
     (ansible_facts.get('architecture') == 'aarch64')
 
-- name: Display diagnostic information
+- name: Display diagnostic information readlink
   ansible.builtin.debug:
     var: diagnostic
   when: >-
     (ansible_facts.get('architecture') == 'aarch64')
 
-- name: Diagnose command execution ice
-  ansible.builtin.shell: /opt/ice/bin/icegridnode --version
+- name: Diagnose command execution inamei -l
+  ansible.builtin.shell: namei -l /usr/local/bin/icegridnode
   register: diagnostic
   changed_when: false
   failed_when: false
   when: >-
     (ansible_facts.get('architecture') == 'aarch64')
 
-- name: Display diagnostic information
+- name: Display diagnostic information namei -l
   ansible.builtin.debug:
     var: diagnostic
   when: >-
