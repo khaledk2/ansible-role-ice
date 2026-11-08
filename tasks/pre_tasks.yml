@@ -58,7 +58,7 @@ download/{{ ice_zeroc_ice_rockylinux9_version }}/Ice-3.6.5-rhel9-x86_64.tar.gz"
     deploy_archive_sha256: "{{ ice_zeroc_ice_aarch64_sha256 }}"
     deploy_archive_symlink: /opt/ice
     deploy_archive_internal_root: >-
-      ice-3.6.5
+      Ice-3.6.5
   when: >-    
     (ansible_facts.get('architecture') == 'aarch64')
 
