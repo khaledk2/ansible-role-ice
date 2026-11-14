@@ -22,5 +22,5 @@ ice_zeroc_ice_rockylinux9_sha256: >-
   9da10544e46dc95197e670dda4df18200d80991c404b2a2692d635ab59896c5d
 
 ice_zeroc_ice_aarch64_version: '20230930'
-ice_zeroc_ice_aarch64_sha256: >-  
-  ca3d4712329de30b1cdec6d42b3167a156ebde08f20179927aa5698303081794
+ice_zeroc_ice_aarch64_sha256: >-
+  e187f1b63eb05f449239fb9d02a07bdcd6ae4e9ef628d4a930f2dfb13889dbfe
